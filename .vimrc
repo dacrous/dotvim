@@ -89,9 +89,10 @@ set ruler
 " }}}
 
 " Highlighting {{{
-"if &t_Co >= 256 || has("gui_running")
-"   colorscheme molokai
-"endif
+if &t_Co >= 256 || has("gui_running")
+    "colorscheme molokai
+   colorscheme desert
+endif
 
 if &t_Co > 2 || has("gui_running")
    syntax on                    " switch syntax highlighting on, when the terminal has colors
