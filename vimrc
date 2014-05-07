@@ -1,9 +1,43 @@
 " vim: fdm=marker ts=2 sts=2 sw=2 fdl=0
 
-" Use vim settings rather than vi settings
-set nocompatible
+" setup & neobundle {{{
+    """ In practical terms, neobundle.vim makes it super
+    """ easy to install plugins and runtime files in their 
+    """ own private directories, as well as fetch the plugins
+    """ from the web (github default).
+    set nocompatible                                " Use vim settings rather than vi settings
+    set rtp+=~/.vim/bundle/neobundle.vim/           "Required for NeoBundle
+    call neobundle#rc(expand('~/.vim/bundle/'))
+    NeoBundleFetch 'Shougo/neobundle.vim'
+" }}}
+
+" bundles {{{
+    " bundles: plugins {{{
+
+        NeoBundle 'bling/vim-airline'
+        NeoBundle 'nathanaelkane/vim-indent-guides'
+
+        if executable('ctags')
+            NeoBundle 'majutsushi/tagbar'
+        endif
+        
+    " }}}
+
+    " bundles: colorschemes {{{
+
+        NeoBundle 'dacrous/vim-desertink'
+        NeoBundle 'tomasr/molokai'
+        NeoBundle 'sickill/vim-monokai'
+        NeoBundle 'nanotech/jellybeans.vim'
+        NeoBundle 'altercation/vim-colors-solarized'
+
+    " }}}
+
+    NeoBundleCheck
+" }}}
 
 filetype indent on " enable detection, plugins and indenting in one step
+colorscheme desertink
 
 " highlight any text beyond column 80
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -123,19 +157,19 @@ match OverLength /\%81v.\+/
     set ruler
 " }}}
 
-" Highlighting {{{
-    "if &t_Co >= 256 || has("gui_running")
-    "   colorscheme molokai
-    "endif
-
-    if &t_Co > 2 || has("gui_running")
-    syntax on                    " switch syntax highlighting on, when the terminal has colors
-    set guioptions+=t            " add tear off menu items
-    set guioptions-=T            " remove toolbar icons
-    endif
-
-    au BufNewFile,BufRead *.less set filetype=less
-" }}}
+"" Highlighting {{{
+"    if &t_Co >= 256 || has("gui_running")
+"       colorscheme molokai
+"    endif
+"
+"    if &t_Co > 2 || has("gui_running")
+"        syntax on                    " switch syntax highlighting on, when the terminal has colors
+"        set guioptions+=t            " add tear off menu items
+"        set guioptions-=T            " remove toolbar icons
+"    endif
+"
+"    au BufNewFile,BufRead *.less set filetype=less
+"" }}}
 
 "This is for setting Makefiles with tabs not spaces
 autocmd FileType make setlocal noexpandtab
@@ -147,10 +181,6 @@ ab #i #include
 set clipboard=unnamed
 
 au BufNewFile,BufRead *.tikz set filetype=tex
-
-""" Enable pathogen plugin:  In practical terms, pathogen.vim makes it super
-""" easy to install plugins and runtime files in their own private directories.
-call pathogen#infect()
 
 """ Mapping to enable Tagbar
 nmap <F8> :TagbarToggle<CR>
