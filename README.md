@@ -25,8 +25,9 @@ running fast
 
 ### [unite](https://github.com/Shougo/unite.vim)
 * The unite plug-in can search and display information from arbitrary sources
-* like files, buffers, recently used files or registers. You can run several
-* pre-defined actions on a target displayed in the unite window.
+like files, buffers, recently used files or registers. You can run several
+pre-defined actions on a target displayed in the unite window.
+
 * Mappings:
    * `<ctrl-f>` (non-recursively) browse files in current directory
    * `<ctrl-y>` browse yank history
@@ -35,9 +36,9 @@ running fast
 
 ### [tagbar](https://github.com/majutsushi/tagbar)
 * Tagbar is a vim plugin for browsing the tags of source code files. It provides
-* a sidebar that displays the ctags-generated tags of the current file, ordered
-* by their scope. This means that for example methods in C++ are displayed under
-* the class they are defined in.
+a sidebar that displays the ctags-generated tags of the current file, ordered
+by their scope. This means that for example methods in C++ are displayed under
+the class they are defined in.
 
 ### [vim-airline](https://github.com/bling/vim-airline)
 * A status/tabline for vim with lots of useful information
