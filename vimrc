@@ -193,7 +193,10 @@ colorscheme desertink
 set t_Co=256
 
 " Font
-set guifont=Monaco\ 12
+" for some reason, Monaco sometimes leaves rendering artifacts when deleting 
+" characters, so I'm disabling it for now
+" set guifont=Monaco\ 12  
+set guifont=Deja\ Vu\ Sans\ Mono\ 12
 
 "This is for setting Makefiles with tabs not spaces
 autocmd FileType make setlocal noexpandtab
