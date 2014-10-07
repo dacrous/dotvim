@@ -34,6 +34,8 @@
         endif
 
         NeoBundle 'Shougo/unite.vim'
+        NeoBundle 'lilydjwg/colorizer'
+
         
     " }}}
 
@@ -164,7 +166,7 @@ colorscheme desertink
     set nomodeline                  " disable mode lines (security measure)
     "set ttyfast                     " always use a fast terminal
     set cursorline                  " underline the current line, for quick orientation
-    set splitbelow                  " put new splits to the right and below
+    set nosplitbelow                " put new splits to the right and above
     set splitright
 
     set ruler
