@@ -146,8 +146,8 @@ colorscheme desertink
     set switchbuf=useopen           " reveal already opened files from the
                                     " quickfix window instead of opening new
                                     " buffers
-    set history=10000                " remember more commands and search history
-    set undolevels=10000             " use many muchos levels of undo
+    set history=10000               " remember more commands and search history
+    set undolevels=10000            " use many muchos levels of undo
     if v:version >= 730
         set undofile                " keep a persistent backup file
         set undodir=~/.vim/.undo,~/tmp,/tmp
@@ -173,6 +173,8 @@ colorscheme desertink
 
     set magic                       " Make regex easier to type
     set colorcolumn=81
+    set nobackup                    " don't create backup files
+    set noswapfile                  " don't create swap files
 " }}}
 
 "" Highlighting {{{
