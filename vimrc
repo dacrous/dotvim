@@ -35,6 +35,10 @@
 
         NeoBundle 'Shougo/unite.vim'
         NeoBundle 'lilydjwg/colorizer'
+        NeoBundle 'octol/vim-cpp-enhanced-highlight'
+
+        NeoBundle 'pangloss/vim-javascript'
+        " NeoBundle 'jelera/vim-javascript-syntax'
 
         
     " }}}
@@ -47,6 +51,7 @@
         NeoBundle 'nanotech/jellybeans.vim'
         NeoBundle 'altercation/vim-colors-solarized'
         NeoBundle 'csexton/spacemanspiff.vim'
+        NeoBundle 'baskerville/bubblegum'
 
     " }}}
 
@@ -59,6 +64,7 @@ augroup MyAutoCmd
 augroup END
 
 filetype indent on " enable detection, plugins and indenting in one step
+filetype plugin on " enable file type plugins
 colorscheme desertink
 
 "" highlight any text beyond column 80
@@ -175,6 +181,8 @@ colorscheme desertink
     set colorcolumn=81
     set nobackup                    " don't create backup files
     set noswapfile                  " don't create swap files
+    set tags+=./tags;$HOME          " look into the current directory for "tags" and work up
+                                    "    the tree towards $HOME if not found
 " }}}
 
 "" Highlighting {{{
@@ -200,7 +208,9 @@ set t_Co=256
 " for some reason, Monaco sometimes leaves rendering artifacts when deleting 
 " characters, so I'm disabling it for now
 " set guifont=Monaco\ 12  
-set guifont=Deja\ Vu\ Sans\ Mono\ 12
+"set guifont=Deja\ Vu\ Sans\ Mono\ 12
+" Hack font available at: sourcefoundry.org/hack/
+set guifont=Hack\ 12
 
 "This is for setting Makefiles with tabs not spaces
 autocmd FileType make setlocal noexpandtab
